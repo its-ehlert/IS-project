@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in — AquaWatch Nairobi</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">💧</span>
+        AquaWatch Nairobi
+      </a>
+      <h1>Welcome back</h1>
+      <p class="subtitle">Log in to submit reports and manage your alerts.</p>
+
+      <div id="alert-container"></div>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" class="form-control" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="Your password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Log in</button>
+      </form>
+
+      <p class="auth-footer-link">
+        Don't have an account? <a href="register.html">Sign up</a>
+      </p>
+      <p class="auth-footer-link" style="margin-top: 0.75rem; font-size: 0.8125rem;">
+        Demo: use <strong>demo@aquawatch.ke</strong> or <strong>admin@aquawatch.ke</strong> (any password)
+      </p>
+    </div>
+  </div>
+
+  <script src="../js/mock-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const alertContainer = document.getElementById("alert-container");
+
+      const user = MOCK_USERS.find((u) => u.email.toLowerCase() === email.toLowerCase());
+      if (!user) {
+        AquaWatch.showAlert(alertContainer, "No account found with that email. Try demo@aquawatch.ke", "error");
+        return;
+      }
+
+      sessionStorage.setItem("aquawatch_user", JSON.stringify(user));
+
+      if (user.role === "admin") {
+        window.location.href = "../admin/index.html";
+      } else {
+        window.location.href = "reports.html";
+      }
+    });
+  </script>
+</body>
+</html>

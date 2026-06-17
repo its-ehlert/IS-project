@@ -1,0 +1,43 @@
+:root {
+  /* Water-inspired palette */
+  --color-primary: #0d6e8a;
+  --color-primary-dark: #094d61;
+  --color-primary-light: #1a9bb8;
+  --color-accent: #2dd4bf;
+  --color-accent-soft: #ccfbf1;
+
+  /* Status colors */
+  --status-available: #16a34a;
+  --status-available-bg: #dcfce7;
+  --status-low: #ca8a04;
+  --status-low-bg: #fef9c3;
+  --status-none: #dc2626;
+  --status-none-bg: #fee2e2;
+  --status-scheduled: #2563eb;
+  --status-scheduled-bg: #dbeafe;
+
+  /* Neutrals */
+  --color-bg: #f0f9ff;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #ffffff;
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --header-height: 64px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+
+  /* Typography */
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Cascadia Code", "Consolas", monospace;
+
+  /* Transitions */
+  --transition: 180ms ease;
+}
