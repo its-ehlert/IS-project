@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supply Dashboard — AquaWatch Nairobi</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">💧</span>
+        AquaWatch Nairobi
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="reports.html">Reports</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="notifications.html">Notifications</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="notifications.html" class="notification-bell" aria-label="Notifications">
+          🔔
+          <span class="badge-count">0</span>
+        </a>
+        <a href="login.html" class="btn btn-ghost btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="page-header">
+      <h1>Supply dashboard</h1>
+      <p>Historical trends and current supply overview across Nairobi neighbourhoods.</p>
+    </div>
+
+    <div class="stat-grid" id="dashboard-stats"></div>
+
+    <div class="page-grid" style="margin-top: 1.5rem;">
+      <div class="card">
+        <div class="card-header">
+          <h2>Weekly supply trends</h2>
+          <select id="chart-neighborhood" class="form-control" aria-label="Filter chart by neighbourhood">
+            <option value="">All Nairobi</option>
+          </select>
+        </div>
+        <div class="card-body">
+          <div class="chart-container">
+            <canvas id="weekly-chart" aria-label="Weekly water supply trends chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>Current status by area</h2>
+        </div>
+        <div class="card-body">
+          <div class="chart-container">
+            <canvas id="status-chart" aria-label="Current status distribution chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <div class="card-header">
+        <h2>6-month availability trend</h2>
+      </div>
+      <div class="card-body">
+        <div class="chart-container" style="height: 280px;">
+          <canvas id="monthly-chart" aria-label="Monthly availability percentage chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <div class="card-header">
+        <h2>Neighbourhood summary</h2>
+      </div>
+      <div class="table-wrapper">
+        <table id="neighborhood-table">
+          <thead>
+            <tr>
+              <th>Neighbourhood</th>
+              <th>Area</th>
+              <th>Latest status</th>
+              <th>Last report</th>
+              <th>Reports (7d)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom" style="border: none; margin: 0; padding: 0;">
+      &copy; 2026 AquaWatch Nairobi
+    </div>
+  </footer>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
