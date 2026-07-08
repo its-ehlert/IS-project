@@ -23,9 +23,9 @@
       <p class="auth-footer-link">
         Don't have an account? <a href="{{ route('register') }}">Sign up</a>
       </p>
-      <p class="auth-footer-link" style="margin-top: 0.75rem; font-size: 0.8125rem;">
+     <!-- <p class="auth-footer-link" style="margin-top: 0.75rem; font-size: 0.8125rem;">
         Demo: <strong>demo@aquawatch.ke</strong> / <strong>demo123</strong> · Admin: <strong>admin@aquawatch.ke</strong> / <strong>admin123</strong>
-      </p>
+      </p> -->
 @endsection
 
 @push('scripts')

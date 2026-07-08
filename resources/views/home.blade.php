@@ -89,11 +89,11 @@
         <p><a href="{{ route('dashboard') }}">Supply dashboard</a></p>
         <p><a href="{{ route('notifications') }}">Notifications</a></p>
       </div>
-      <div>
+     <!-- <div>
         <h4>Project</h4>
         <p>ICS Project — OOAD methodology</p>
         <p>HTML · CSS · JavaScript · PHP · MySQL</p>
-      </div>
+      </div> -->
     </div>
     <div class="footer-bottom">
       &copy; 2026 AquaWatch Nairobi. Community water supply monitoring for Nairobi.
